@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <span routerLink="/tasks">TASK Manager</span>
+  <span class="spacer"></span>
+  <button
+    [matMenuTriggerFor]="menu"
+    mat-fab
+    color="danger"
+    style="transform: scale(1.05)"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/profile">Profile</button>
+    <button mat-menu-item routerLink="/completed">Completed</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+</mat-toolbar>

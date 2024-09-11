@@ -1,0 +1,24 @@
+<app-header></app-header>
+<mat-card class="comp-card" *ngFor="let comp of statusData; index as i">
+  <mat-card-header class="comp-card-header">
+    <mat-card-title class="comp-card-title">{{ comp.title }} </mat-card-title>
+    <mat-card-subtitle class="comp-card-subtitle">
+      {{ comp.description }}
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      <strong>Completed at: </strong>
+      {{ comp.completed_at | date : "dd/MM/yyyy" }}
+      {{ comp.completed_at | date : "hh:mm:ss" }}
+    </mat-card-subtitle>
+    <span>
+      <button mat-raised-button color="primary" (click)="reProgress(i)">
+        Re-Do
+      </button>
+    </span>
+  </mat-card-header>
+</mat-card>
+<div class="not-found-container" *ngIf="statusData.length == 0">
+  <h1>Not Found</h1>
+  <p>No completed tasks found.</p>
+  <button mat-raised-button color="primary" routerLink="/tasks">Go Home</button>
+</div>

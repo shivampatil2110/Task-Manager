@@ -1,0 +1,78 @@
+<app-header></app-header>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <div class="info">
+      <p>
+        <strong>Name: </strong>
+        {{ userData[0].name }}
+      </p>
+      <hr />
+      <p><strong>Email: </strong> {{ userData[0].email }}</p>
+
+      <hr />
+      <p>
+        <strong>Total Tasks: </strong>
+        {{ todoData.length }}
+      </p>
+      <hr />
+      <p>
+        <strong>Completed Todo: </strong>
+        {{ comp }}
+      </p>
+      <hr />
+      <p>
+        <strong>In Progress Todo: </strong>
+        {{ prog }}
+      </p>
+      <hr />
+      <p>
+        <strong>Incomplete Todo: </strong>
+        {{ incomp }}
+      </p>
+      <hr />
+      <p>
+        <strong>Cancelled Todo: </strong>
+        {{ can }}
+      </p>
+      <hr />
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="form-container">
+      <form [formGroup]="passwordForm" (ngSubmit)="updatePassword()">
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            formControlName="current_password"
+            placeholder="Current Password"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            placeholder="New Password"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            formControlName="confirm_password"
+            placeholder="Confirm New Password"
+          />
+        </mat-form-field>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="passwordForm.invalid"
+        >
+          Update Password
+        </button>
+      </form>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

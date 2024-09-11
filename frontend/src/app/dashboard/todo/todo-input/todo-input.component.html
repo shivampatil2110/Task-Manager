@@ -1,0 +1,37 @@
+<div class="body">
+  <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+    <mat-form-field>
+      <input matInput formControlName="title" placeholder="Title" required />
+      <mat-error
+        *ngIf="taskForm.get('title')?.touched || taskForm.get('title')?.dirty"
+        >Title is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea
+        matInput
+        formControlName="description"
+        placeholder="Description"
+        required
+      ></textarea>
+      <mat-error
+        *ngIf="
+          taskForm.get('description')?.touched ||
+          taskForm.get('description')?.dirty
+        "
+        >Description is required</mat-error
+      >
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="taskForm.invalid"
+    >
+      Add Task
+    </button>
+  </form>
+</div>
+<!-- <app-todo-card [todoData]="todo"></app-todo-card> -->

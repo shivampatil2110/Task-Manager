@@ -1,0 +1,48 @@
+.body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("../../../assets/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -5rem;
+}
+
+form {
+  background-color: rgba(99, 99, 99, 0.151);
+  padding: 20px;
+  border-radius: 40px;
+  margin-right: 23rem;
+}
+
+.mat-mdc-text-field-wrapper {
+  border-radius: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+span {
+  margin-bottom: 8px;
+}
+
+.sign-up-link {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-button {
+  margin-top: 16px;
+  background-color: #28a745;
+  color: #ff0a0a;
+}
+
+.login-button:disabled {
+  background-color: #ccc;
+  color: #000;
+}

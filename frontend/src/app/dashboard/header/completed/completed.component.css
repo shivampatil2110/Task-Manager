@@ -1,0 +1,74 @@
+.comp-card {
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 8px;
+  background: linear-gradient(
+    -270deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.comp-card-header {
+  color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #555;
+}
+
+.comp-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+.comp-card-subtitle {
+  color: #555;
+  margin-top: 5px;
+}
+
+.comp-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.comp-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  pointer-events: none;
+}
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 1.2em;
+  color: black;
+  /* margin-bottom: 24px; */
+}
+
+button {
+  font-size: 1em;
+}
+
+span {
+  color: black;
+  align-self: end;
+  margin-left: 58rem;
+}

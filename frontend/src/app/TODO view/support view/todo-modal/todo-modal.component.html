@@ -1,0 +1,53 @@
+<div class="custom-modal">
+  <h2>TODO Detail</h2>
+  <div class="modal-content">
+    <p>
+      <strong>Description: </strong>
+      {{ selectedItem.description }}
+    </p>
+    <hr />
+    <p><strong>Status:</strong> {{ selectedItem.status.toUpperCase() }}</p>
+    <hr />
+    <p *ngIf="selectedItem.started_at != null">
+      <strong>Started At:</strong>
+      {{ selectedItem.started_at | date : "dd-MM-yyyy" }}
+      {{ selectedItem.started_at | date : "HH:mm:ss" }}
+    </p>
+    <p *ngIf="selectedItem.started_at == null">
+      <strong>Started At:</strong>
+      Not yet started
+    </p>
+    <hr />
+    <p *ngIf="selectedItem.completed_at != null">
+      <strong>Completed At:</strong>
+      {{ selectedItem.completed_at | date : "dd-MM-yyyy" }}
+      {{ selectedItem.completed_at | date : "HH:mm:ss" }}
+    </p>
+    <p *ngIf="selectedItem.completed_at == null">
+      <strong>Completed At:</strong>
+      Not yet completed
+    </p>
+    <hr />
+    <p>
+      <strong>Created At:</strong>
+      {{ selectedItem.created_at | date : "dd-MM-yyyy" }}
+      {{ selectedItem.created_at | date : "HH:mm:ss" }}
+    </p>
+    <hr />
+    <p>
+      <strong>Updated At: </strong
+      >{{ selectedItem.updated_at | date : "dd-MM-yyyy" }}
+      {{ selectedItem.updated_at | date : "HH:mm:ss" }}
+    </p>
+    <hr />
+    <p *ngIf="selectedItem.due_at == null">
+      <strong>Due At:</strong>
+      No due date
+    </p>
+    <p *ngIf="selectedItem.due_at != null">
+      <strong>Due At: </strong>{{ selectedItem.due_at | date : "dd-MM-yyyy" }}
+    </p>
+    <hr />
+  </div>
+  <button mat-button (click)="closeModal()">Close</button>
+</div>
